@@ -1227,33 +1227,3 @@ class _Array2XML {
 	}
 
 }
-
-
-#######################################################
-
-$orsr = new ConnectorOrsr_standalone;
-
-// turn on local caching & direct buffer output
-// local caching = no real cache directory, just into root to reduce extern requests
-// $orsr->debug = true;
-// $orsr->setOutputFormat('xml'); // xml|json|empty string
-
-//$orsr->getDetailById(1366, 9); // a.s. - Agrostav
-//$orsr->getDetailById(19691, 2); // a.s. - Kerametal
-
-//$orsr->getDetailById(11095, 2); // s.r.o. - Elet
-//$orsr->getDetailById(11075, 5); // Firm / SZCO
-//$orsr->getDetailById(5721, 6); // v.o.s.
-// $orsr->getDetailById(11370, 6); // druzstvo
-//$orsr->getDetailById(60321, 8); // statny podnik
-
-//$orsr->getDetailByICO('31577890');
-//$orsr->getDetailByICO('123');
-$data = $orsr->findByPriezviskoMeno('novák', 'peter');
-$data = $orsr->findByObchodneMeno('Matador');
-
-$data = $orsr->getDetailByICO('31411801'); // [MATADOR Automotive Vráble, a.s.] => vypis.asp?ID=1319&SID=9&P=0
-echo "<pre>".print_r($data, 1)."</pre>";
-
-$data = $orsr->getDetailById(1319, 9); // statny podnik
-echo "<pre>".print_r($data, 1)."</pre>";
