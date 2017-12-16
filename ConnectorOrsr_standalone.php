@@ -840,7 +840,7 @@ class ConnectorOrsr_standalone
 	}
 
 	protected function extract_dozornaRada($tag, $node, $xpath){
-		$out = '';
+		$out = [];
 		$rada = $xpath->query(".//table", $node);
 		if($rada->length){
 			foreach($rada as $person){
